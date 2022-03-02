@@ -8,6 +8,7 @@ const { Server } = require("socket.io");
 const PostRouter = require('./modules/post');
 // const CommentRouter = require('./modules/comment');
 const AuthRouter = require('./modules/auth');
+const CategoryRouter = require('./modules/category');
 // const UploadRouter = require('./modules/upload');
 const EventEmitter = require('events');
 const HttpError = require('./common/httpError');
@@ -28,6 +29,7 @@ async function main() {
 
     app.use('/auth', AuthRouter)
     app.use('/post', PostRouter)
+    app.use('/category', CategoryRouter)
 
     app.use(errorHandler)
 

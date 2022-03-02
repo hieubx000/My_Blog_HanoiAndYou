@@ -1,8 +1,8 @@
 const CategoryModel = require('./category')
-const BrandModel = require('../brand/brand')
-const ProductModel = require('../product/product')
+// const BrandModel = require('../brand/brand')
+// const ProductModel = require('../product/product')
 const HttpError = require('../../common/httpError');
-const SubCategoryModel = require('../sub-category/sub-category');
+// const SubCategoryModel = require('../sub-category/sub-category');
 
 const getAllCategory = async(req, res) => {
     const { keyword, sortDirection, sortField, skip, limit } = req.query
@@ -93,15 +93,15 @@ const getCategory = async(req, res) => {
             // for (let j = 0; j < subCategoryFilter.length; j++) {
             //     console.log(j);
             // }
-            const filter = {
-                id: subCategoryId1
-            }
-            let foundBrand = await BrandModel.find({ subCategoryId: { $in: subCategoryId1 } })
-            var brandId = []
-                // console.log(brandId);
-            for (let i = 0; i < foundBrand.length; i++) {
-                brandId.push(foundBrand[i].id)
-            }
+            // const filter = {
+            //     id: subCategoryId1
+            // }
+            // let foundBrand = await BrandModel.find({ subCategoryId: { $in: subCategoryId1 } })
+            // var brandId = []
+            //     // console.log(brandId);
+            // for (let i = 0; i < foundBrand.length; i++) {
+            //     brandId.push(foundBrand[i].id)
+            // }
             // console.log(i, brandId);
             // SORT
             const sortDirectionParams = sortDirection ? Number(sortDirection) : -1
